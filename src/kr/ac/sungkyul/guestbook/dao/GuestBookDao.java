@@ -110,7 +110,7 @@ public class GuestBookDao {
 			
 			stmt = conn.createStatement();
 			
-			String sql = "select no, name, password, content, "
+			String sql = "select no, name, content, "
 					+ "			 to_char(reg_date, 'yyyy-mm-dd pm hh12:mi:ss') "
 					+ "		from GUESTBOOK"
 					+ "		order by reg_date desc";
@@ -119,14 +119,12 @@ public class GuestBookDao {
 			while(rs.next()){
 				Long no = rs.getLong(1);
 				String name = rs.getString(2);
-				String password = rs.getString(3);
-				String content = rs.getString(4);
-				String regDate = rs.getString(5);
+				String content = rs.getString(3);
+				String regDate = rs.getString(4);
 				
 				GuestBookVo vo = new GuestBookVo();
 				vo.setNo(no);
 				vo.setName(name);
-				vo.setPassword(password);
 				vo.setContent(content);
 				vo.setRegDate(regDate);
 				

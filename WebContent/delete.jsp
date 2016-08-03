@@ -13,5 +13,5 @@
 	GuestBookDao dao = new GuestBookDao();
 	int count = dao.delete(vo);
 	
-	response.sendRedirect("/guestbook/deleteform.jsp");
+	response.sendRedirect("/guestbook");
 %>
